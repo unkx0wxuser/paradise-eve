@@ -568,11 +568,12 @@ body {
 
     .header-container {
         position: fixed;
-        top: 20px;
+        top: 100px;
         left: 0;
         right: 0;
         width: 100%;
-        max-width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
         background-color: #000000;
         z-index: 1000;
         flex-shrink: 0;
