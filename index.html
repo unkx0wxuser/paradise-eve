@@ -548,45 +548,6 @@
             );
         }
 
-        function Header({ user, activeView, onNavigateToMain, onNavigateToShop, onNavigateToRoulette }) {
-            return (
-                <div className="header-container">
-                    <div className="title-image-container">
-                        <img src="777.png" className="title-image" />
-                    </div>
-                    <div className="user-info">
-                        <h4>접속 아이디: {user.name}</h4>
-                        <div className="chip-display">
-                            <span className="chip-label">
-                                <img src="chip.png" alt="칩" className="chip-label-icon" />
-                            </span>
-                            <span className="chip-count">{user.tokens}개</span>
-                        </div>
-                        <div className="nav-buttons">
-                            <button 
-                                className={`nav-button ${activeView === 'main' ? 'active' : ''}`}
-                                onClick={onNavigateToMain}
-                            >
-                                조정
-                            </button>
-                            <button 
-                                className={`nav-button ${activeView === 'shop' ? 'active' : ''}`}
-                                onClick={onNavigateToShop}
-                            >
-                                카드
-                            </button>
-                            <button 
-                                className={`nav-button ${activeView === 'roulette' ? 'active' : ''}`}
-                                onClick={onNavigateToRoulette}
-                            >
-                                룰렛
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
         function MainView({ user, onLogout, onNavigateToShop, onNavigateToRoulette, refreshTrigger, onChipUpdate }) {
             const [chipInput, setChipInput] = useState('');
             const [message, setMessage] = useState('');
@@ -614,15 +575,24 @@
 
             return (
                 <div className="view-container">
-                    <Header 
-                        user={user}
-                        activeView="main"
-                        onNavigateToMain={() => {}}
-                        onNavigateToShop={onNavigateToShop}
-                        onNavigateToRoulette={onNavigateToRoulette}
-                    />
-                    <div className="content-container">
-                        <div className="chip-add-section">
+                    <div className="title-image-container">
+                        <img src="777.png" className="title-image" />
+                    </div>
+                    <div className="user-info">
+                        <h4>접속 아이디: {user.name}</h4>
+                        <div className="chip-display">
+                            <span className="chip-label">
+                                <img src="chip.png" alt="칩" className="chip-label-icon" />
+                            </span>
+                            <span className="chip-count">{user.tokens}개</span>
+                        </div>
+                        <div className="nav-buttons">
+                            <button className="nav-button active">조정</button>
+                            <button className="nav-button" onClick={onNavigateToShop}>카드</button>
+                            <button className="nav-button" onClick={onNavigateToRoulette}>룰렛</button>
+                        </div>
+                    </div>
+                    <div className="chip-add-section">
                         <div className="chip-add-controls">
                             <input
                                 type="number"
@@ -649,12 +619,11 @@
                                 {message}
                             </div>
                         )}
-                        </div>
-                        <Scoreboard currentUserEmail={user.email} onRefresh={refreshTrigger} />
-                        <button className="logout-button" onClick={onLogout}>
-                            로그아웃
-                        </button>
                     </div>
+                    <Scoreboard currentUserEmail={user.email} onRefresh={refreshTrigger} />
+                    <button className="logout-button" onClick={onLogout}>
+                        로그아웃
+                    </button>
                 </div>
             );
         }
@@ -662,16 +631,24 @@
         function ShopView({ user, onBack, onPurchase, onNavigateToRoulette, refreshTrigger }) {
             return (
                 <div className="view-container">
-                    <Header 
-                        user={user}
-                        activeView="shop"
-                        onNavigateToMain={onBack}
-                        onNavigateToShop={() => {}}
-                        onNavigateToRoulette={onNavigateToRoulette}
-                    />
-                    <div className="content-container">
-                        <Shop user={user} onPurchase={onPurchase} onBack={onBack} />
+                    <div className="title-image-container">
+                        <img src="777.png" className="title-image" />
                     </div>
+                    <div className="user-info">
+                        <h4>접속 아이디: {user.name}</h4>
+                        <div className="chip-display">
+                            <span className="chip-label">
+                                <img src="chip.png" alt="칩" className="chip-label-icon" />
+                            </span>
+                            <span className="chip-count">{user.tokens}개</span>
+                        </div>
+                        <div className="nav-buttons">
+                            <button className="nav-button" onClick={onBack}>조정</button>
+                            <button className="nav-button active">카드</button>
+                            <button className="nav-button" onClick={onNavigateToRoulette}>룰렛</button>
+                        </div>
+                    </div>
+                    <Shop user={user} onPurchase={onPurchase} onBack={onBack} />
                 </div>
             );
         }
@@ -679,16 +656,24 @@
         function RouletteView({ user, onBack, onPurchase, onNavigateToShop, refreshTrigger }) {
             return (
                 <div className="view-container">
-                    <Header 
-                        user={user}
-                        activeView="roulette"
-                        onNavigateToMain={onBack}
-                        onNavigateToShop={onNavigateToShop}
-                        onNavigateToRoulette={() => {}}
-                    />
-                    <div className="content-container">
-                        <Roulette user={user} onBack={onBack} onSpin={onPurchase} />
+                    <div className="title-image-container">
+                        <img src="777.png" className="title-image" />
                     </div>
+                    <div className="user-info">
+                        <h4>접속 아이디: {user.name}</h4>
+                        <div className="chip-display">
+                            <span className="chip-label">
+                                <img src="chip.png" alt="칩" className="chip-label-icon" />
+                            </span>
+                            <span className="chip-count">{user.tokens}개</span>
+                        </div>
+                        <div className="nav-buttons">
+                            <button className="nav-button" onClick={onBack}>조정</button>
+                            <button className="nav-button" onClick={onNavigateToShop}>카드</button>
+                            <button className="nav-button active">룰렛</button>
+                        </div>
+                    </div>
+                    <Roulette user={user} onBack={onBack} onSpin={onPurchase} />
                 </div>
             );
         }
