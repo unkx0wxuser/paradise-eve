@@ -15,20 +15,24 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
+        // localStorage에서 모든 사용자 가져오기
         const getUsers = () => {
             const usersJson = localStorage.getItem('bandTest01_users');
             return usersJson ? JSON.parse(usersJson) : {};
         };
 
+        // localStorage에 사용자 저장하기
         const saveUsers = (users) => {
             localStorage.setItem('bandTest01_users', JSON.stringify(users));
         };
 
+        // 사용자 가져오기 (이메일로)
         const getUser = (email) => {
             const users = getUsers();
             return users[email] || null;
         };
 
+        // 사용자 생성/업데이트
         const saveUser = (userData) => {
             const users = getUsers();
             users[userData.email] = userData;
@@ -36,6 +40,7 @@
             return userData;
         };
 
+        // 사용자 칩 업데이트
         const updateUserChips = (email, chips) => {
             const users = getUsers();
             if (users[email]) {
@@ -46,6 +51,7 @@
             return null;
         };
 
+        // 로그인
         const login = (email, password) => {
             const user = getUser(email);
             if (user && user.password === password) {
@@ -54,16 +60,25 @@
             return null;
         };
 
+        // 현재 로그인한 사용자 이메일 가져오기 (localStorage에서)
         const getCurrentUserEmail = () => {
             return localStorage.getItem('bandTest01_currentUser');
         };
 
+        // 현재 로그인한 사용자 저장하기
         const setCurrentUser = (email) => {
             if (email) {
                 localStorage.setItem('bandTest01_currentUser', email);
             } else {
                 localStorage.removeItem('bandTest01_currentUser');
             }
+        };
+
+        // 스코어보드 데이터 가져오기 (칩 수 순으로 정렬)
+        const getScoreboard = () => {
+            const users = getUsers();
+            const usersArray = Object.values(users);
+            return usersArray.sort((a, b) => (b.tokens || 0) - (a.tokens || 0));
         };
 
         function SignupForm({ onSuccess }) {
