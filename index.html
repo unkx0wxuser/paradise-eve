@@ -442,7 +442,7 @@
                             setPurchaseMessage(`JACKPOT! ${newChipCount} 개 획득`);
                         } else {
                             updateUserChips(user.email, 0);
-                            setPurchaseMessage('전부 잃었습니다');
+                            setPurchaseMessage('전부 잃었습니다. 오늘 식사는 그르친 것 같네요…');
                         }
                         
                         setTimeout(() => {
@@ -511,9 +511,12 @@
                         setIsSpinning(false);
 
                         if (newCards[0] === newCards[1] && newCards[1] === newCards[2]) {
-                            setResult('JACKPOT');
+                            const jackpotChips = newChipCount * 3;
+                            updateUserChips(user.email, jackpotChips);
+                            setResult(`JACKPOT! ${jackpotChips} 개 획득`);
+                            onSpin();
                         } else {
-                            setResult('아이고, 오늘 식사는 그르친 것 같네요…');
+                            setResult('YOU LOSE');
                         }
                     }, 1000);
                 } catch (error) {
@@ -532,7 +535,7 @@
                         ))}
                     </div>
                     {result && (
-                        <div className={`roulette-result ${result === 'JACKPOT' ? 'jackpot' : 'fail'}`}>
+                        <div className={`roulette-result ${result.includes('JACKPOT') ? 'jackpot' : 'fail'}`}>
                             {result}
                         </div>
                     )}
