@@ -390,7 +390,7 @@
                         const newChipCount = user.tokens - price;
                         const isSuccess = Math.random() < 0.5;
                         const finalChipCount = isSuccess 
-                            ? newChipCount + 2 
+                            ? newChipCount + 4
                             : Math.max(0, newChipCount - 3);
                         
                         updateUserChips(user.email, finalChipCount);
@@ -403,7 +403,7 @@
                         const newChipCount = user.tokens - price;
                         const isSuccess = Math.random() < 0.5;
                         const finalChipCount = isSuccess 
-                            ? newChipCount + 5 
+                            ? newChipCount + 10
                             : Math.max(0, newChipCount - 7);
                         
                         updateUserChips(user.email, finalChipCount);
