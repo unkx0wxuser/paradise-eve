@@ -24,15 +24,10 @@ body {
 }
 
 .header-container {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    right: 0;
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
     background-color: #000000;
-    z-index: 1000;
     flex-shrink: 0;
     overflow: hidden;
     box-sizing: border-box;
@@ -119,7 +114,6 @@ body {
 .content-container {
     width: 100%;
     flex: 1;
-    padding-top: 250px;
     box-sizing: border-box;
 }
 
@@ -242,10 +236,6 @@ body {
     padding: 20px;
 }
 
-.user-info h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
-}
 
 .chip-display {
     display: flex;
@@ -307,12 +297,6 @@ body {
     color: #000000;
 }
 
-.shop-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
 .shop-grid {
     display: grid;
@@ -386,12 +370,6 @@ body {
     align-items: center;
 }
 
-.roulette-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-align: center;
-}
 
 .roulette-cards {
     display: flex;
@@ -494,23 +472,6 @@ body {
     color: #000000;
 }
 
-.back-button {
-    width: 100%;
-    padding: 10px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.back-button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
 
 .purchase-message {
     margin-top: 10px;
@@ -567,14 +528,9 @@ body {
     }
 
     .header-container {
-        position: fixed;
-        top: 100px;
-        left: 0;
-        right: 0;
         width: 100%;
         max-width: 100%;
         background-color: #000000;
-        z-index: 1000;
         flex-shrink: 0;
         overflow: hidden;
         box-sizing: border-box;
@@ -664,7 +620,6 @@ body {
     .content-container {
         width: 100%;
         flex: 1;
-        padding-top: 250px;
         box-sizing: border-box;
     }
 
@@ -682,7 +637,6 @@ body {
         padding: 15px;
     }
 
-    .user-info h3,
     .user-info h4 {
         font-size: 16px;
         margin-bottom: 10px;
