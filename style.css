@@ -514,7 +514,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 5px;
         align-items: flex-start;
         min-height: 100vh;
     }
@@ -523,6 +523,7 @@ body {
         width: 100%;
         max-width: 100%;
         padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
     }
@@ -534,85 +535,82 @@ body {
         flex-shrink: 0;
         overflow: hidden;
         box-sizing: border-box;
+        margin: 0;
     }
 
     .header-container .title-image-container {
-        width: 100px;
+        width: 80px;
         height: auto;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0 auto 5px;
         padding: 0;
         box-sizing: border-box;
     }
 
     .header-container .title-image {
-        width: 100px;
+        width: 80px;
         height: auto;
         display: block;
         margin: 0 auto;
     }
 
     .header-container .user-info {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 20px;
+        margin: 0;
+        padding: 12px;
         box-sizing: border-box;
         height: auto;
     }
 
     .header-container .user-info h4 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 16px;
+        margin: 0 0 8px 0;
+        font-size: 14px;
         line-height: 1.2;
         height: auto;
-        min-height: 19.2px;
+        min-height: 16.8px;
     }
 
     .header-container .chip-display {
-        margin-top: 10px;
-        margin-bottom: 30px;
-        padding: 15px;
+        margin: 8px 0 15px 0;
+        padding: 12px;
         box-sizing: border-box;
         height: auto;
-        min-height: 54px;
+        min-height: 48px;
     }
 
     .header-container .chip-label {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1;
-        height: 20px;
+        height: 18px;
     }
 
     .header-container .chip-label-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         flex-shrink: 0;
     }
 
     .header-container .chip-count {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1;
-        height: 24px;
+        height: 20px;
     }
 
     .header-container .nav-buttons {
         flex-wrap: nowrap;
-        margin-top: 0;
-        margin-bottom: 30px;
-        gap: 10px;
+        margin: 0 0 15px 0;
+        gap: 6px;
         height: auto;
-        min-height: 48px;
+        min-height: 44px;
         box-sizing: border-box;
     }
     
     .header-container .nav-button {
         flex: 1;
         min-width: 0;
-        font-size: 14px;
-        padding: 12px;
-        line-height: 1;
-        height: 48px;
+        font-size: 12px;
+        padding: 10px 4px;
+        line-height: 1.2;
+        min-height: 44px;
+        height: auto;
         box-sizing: border-box;
         flex-shrink: 0;
     }
@@ -621,72 +619,74 @@ body {
         width: 100%;
         flex: 1;
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
     .title {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 12px;
     }
 
     .title-image-container {
-        margin-bottom: 15px;
-    }
-
-    .user-info {
-        margin-top: 10px;
-        padding: 15px;
-    }
-
-    .user-info h4 {
-        font-size: 16px;
         margin-bottom: 10px;
     }
 
-    .chip-display {
-        padding: 12px;
+    .user-info {
         margin-top: 8px;
-        margin-bottom: 15px;
+        padding: 12px;
+    }
+
+    .user-info h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .chip-display {
+        padding: 10px;
+        margin: 8px 0 12px 0;
     }
 
     .chip-label {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .chip-label-icon {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     .chip-count {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .nav-buttons {
         flex-wrap: nowrap;
-        gap: 8px;
-        margin-bottom: 15px;
+        gap: 6px;
+        margin-bottom: 12px;
     }
     
     .nav-button {
         flex: 1;
         min-width: 0;
-        font-size: 12px;
-        padding: 10px 6px;
+        font-size: 11px;
+        padding: 10px 4px;
+        min-height: 44px;
     }
 
     .chip-add-section {
-        margin: 15px 0;
-        padding: 15px;
+        margin: 12px 0;
+        padding: 12px;
     }
 
     .chip-add-section h3 {
-        font-size: 16px;
-        margin-bottom: 12px;
+        font-size: 14px;
+        margin-bottom: 10px;
     }
     
     .chip-add-controls {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
     
     .chip-add-input {
@@ -696,118 +696,124 @@ body {
     
     .chip-add-button {
         width: 100%;
+        min-height: 44px;
     }
 
     .scoreboard {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .scoreboard-title {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 12px;
     }
 
     .scoreboard-item {
-        padding: 12px 15px;
+        padding: 10px 12px;
     }
 
     .scoreboard-rank {
-        font-size: 18px;
-        min-width: 35px;
+        font-size: 16px;
+        min-width: 30px;
     }
 
     .scoreboard-name {
-        font-size: 14px;
-        margin-left: 10px;
+        font-size: 13px;
+        margin-left: 8px;
     }
 
     .scoreboard-chips {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .shop-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 8px;
         max-width: 100%;
     }
 
     .shop-item {
-        padding: 15px;
-        min-height: 100px;
+        padding: 12px;
+        min-height: 90px;
     }
 
     .item-name {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 14px;
+        margin-bottom: 5px;
     }
 
     .item-price {
-        font-size: 11px;
-        margin-top: 6px;
+        font-size: 10px;
+        margin-top: 5px;
     }
 
     .chip-icon {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 
     .roulette-section {
-        margin-top: 15px;
+        margin-top: 12px;
     }
 
     .roulette-cards {
-        gap: 15px;
-        margin-bottom: 20px;
+        gap: 10px;
+        margin-bottom: 15px;
     }
 
     .roulette-card {
-        width: 80px;
-        height: 120px;
-        font-size: 25px;
+        width: 70px;
+        height: 105px;
+        font-size: 22px;
     }
 
     .roulette-result {
-        font-size: 24px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: 12px;
     }
 
     .roulette-spin-button {
         padding: 12px;
-        font-size: 14px;
+        font-size: 13px;
+        min-height: 44px;
     }
 
     .logout-button {
         padding: 10px;
-        font-size: 13px;
-        margin-top: 10px;
+        font-size: 12px;
+        margin-top: 8px;
+        min-height: 44px;
     }
 
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .form-label {
-        font-size: 13px;
-        margin-bottom: 6px;
+        font-size: 12px;
+        margin-bottom: 5px;
     }
 
     .form-input {
-        padding: 10px 14px;
+        padding: 10px 12px;
         font-size: 14px;
+        min-height: 44px;
     }
 
     .submit-button {
         padding: 12px;
         font-size: 14px;
-        margin-top: 8px;
+        margin-top: 6px;
+        min-height: 44px;
     }
 
     .mode-toggle {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .mode-button {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 13px;
+        padding: 10px;
+        min-height: 44px;
     }
 }
